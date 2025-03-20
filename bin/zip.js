@@ -54,7 +54,7 @@ exec(
         }
 
         exec(
-            'composer install --optimize-autoloader --no-dev',
+            'composer install && composer install --optimize-autoloader --no-dev',
             {
                 cwd: dest
             },
