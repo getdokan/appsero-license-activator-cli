@@ -116,4 +116,6 @@ Temporary Items
 .apdisk
 
 /vendor/
+/node_modules/
+/build/
 

@@ -1,0 +1,28 @@
+{
+  "name": "appsero-license-activator-cli",
+  "version": "0.0.1",
+  "description": "Activate licence for plugin managed by Appsero.",
+  "main": "index.js",
+  "bin": {
+    "appsero-license-activator-cli": "bin/zip.js"
+  },
+  "scripts": {
+    "zip": "node bin/zip",
+    "release": "composer install && composer install --no-dev && npm install && npm run zip"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getdokan/appsero-license-activator-cli.git"
+  },
+  "author": "Dokan Inc.",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/getdokan/appsero-license-activator-cli/issues"
+  },
+  "homepage": "https://github.com/getdokan/appsero-license-activator-cli#readme",
+  "devDependencies": {
+    "chalk": "^5.4.1",
+    "fs-extra": "^11.3.0"
+  }
+}
