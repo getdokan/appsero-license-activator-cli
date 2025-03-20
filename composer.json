@@ -1,0 +1,57 @@
+{
+    "name": "dokan/appsero-license-activator",
+    "description": "Activate Appsero license for plugins and themes.",
+    "type": "wordpress-plugin",
+    "require": {
+        "appsero/client": "^2.0"
+    },
+    "require-dev": {
+        "coenjacobs/mozart": "^0.7.1",
+        "wp-cli/wp-cli-bundle": "^2.11"
+    },
+    "license": "GPL 3 Plus",
+    "autoload": {
+        "psr-4": {
+            "Dokan\\AppseroLicenseActivator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dokan inc",
+            "email": "support@dokan.co"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+        "post-install-cmd": [
+            "[ $COMPOSER_DEV_MODE -eq 0 ] || \"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "[ $COMPOSER_DEV_MODE -eq 0 ] || \"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ]
+    },
+    "extra": {
+        "mozart": {
+            "dep_namespace": "Dokan\\AppseroLicenseActivator\\Dependencies\\",
+            "dep_directory": "/src/Dependencies/",
+            "classmap_directory": "/classes/dependencies/",
+            "classmap_prefix": "DALA_",
+            "packages": [
+                "appsero/client"
+            ],
+            "excluded_packages": [
+                "psr/container"
+            ],
+            "override_autoload": {
+                "google/apiclient": {
+                    "classmap": [
+                        "src/"
+                    ]
+                }
+            },
+            "delete_vendor_directories": true
+        }
+    }
+}
